@@ -36,6 +36,9 @@ set termencoding=utf-8
 " disable vi compatibility (emulation of old bugs)
 set nocompatible
 
+" click to move pointer (shift to copy)
+set mouse=n
+
 " vim airline theme 
 let g:airline_theme='fruit_punch'
 
