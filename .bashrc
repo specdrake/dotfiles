@@ -48,4 +48,4 @@ PS_TIME="\[\033[\$((COLUMNS-10))G\] $RED[\t]"
 export PS1="\${PS_FILL}\[\033[0G\]${PS_INFO} ${PS_GIT}${PS_TIME}\n${RESET}λ "
 
 alias cl='clear'
-[ -f "/home/anurag/.ghcup/env" ] && source "/home/anurag/.ghcup/env" # ghcup-env
+alias bat='cat /sys/class/power_supply/BAT0/capacity'

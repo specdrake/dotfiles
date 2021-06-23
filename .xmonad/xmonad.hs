@@ -148,6 +148,10 @@ myKeys =
         , ("M-<Delete>", withFocused $ windows . W.sink)  -- Push floating window back to tile.
         , ("M-S-<Delete>", sinkAll)                  -- Push ALL floating windows back to tile.
 
+    --- Screenshot
+        , ("M-<Print>", spawn "scrot /home/anurag/Pictures/Screenshots/%Y%b%d::%H%M%S.png")
+        , ("M-S-<Print>", spawn "scrot -u /home/anurag/Pictures/Screenshots/%Y%b%d::%H%M%S.png")
+
     --- Grid Select
         , (("M-S-t"), spawnSelected'
           [ ("Volume Control", "pavucontrol")
@@ -292,7 +296,7 @@ myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
 ------------------------------------------------------------------------
 
 myStartupHook = do
-    spawn "brave"
     spawn "volnoti"
     spawn "xbindkeys --poll-rc"
-
+    spawn "feh --bg-scale ~/Pictures/Wallpapers/arch1.jpg"
+    spawn "xsetroot -cursor_name left_ptr"

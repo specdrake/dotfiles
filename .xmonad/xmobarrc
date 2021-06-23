@@ -12,17 +12,17 @@ Config { font = "xft:Sans:pixelsize=16:antialias=true:hinting=true"
        , hideOnStart = False
        , allDesktops = True
        , persistent = True
-       , iconRoot = "/home/mindaugas/.xmonad/xpm/"  -- default: "."
+       , iconRoot = "/home/anurag/.xmonad/xpm/"  -- default: "."
        , commands = [ Run Date "%a, %b %d %Y, %H:%M:%S" "date" 10
                     , Run Network "wlan0" ["-t", "<icon=net_up_20.xpm/>up <rxbar> <icon=net_down_20.xpm/>dn <txbar>"] 10
                     , Run Cpu ["-t", "<icon=cpu_20.xpm/> cpu <bar> (<total>%)","-H","50","--high","red"] 10
                     , Run Memory ["-t", "<icon=memory-icon_20.xpm/> mem <usedbar> (<usedratio>%)"] 10
-                    , Run BatteryP ["BAT", "BAT0", "BAT1", "BAT2"] [ "--template" , "Batt: <acstatus>"
+                    , Run Battery [ "--template" , "Batt: <acstatus>"
                              , "--Low"      , "10"        -- units: %
                              , "--High"     , "80"        -- units: %
                              , "--low"      , "darkred"
                              , "--normal"   , "darkorange"
-                             , "--high"     , "darkgreen"
+                             , "--high"     , "green"
 
                              , "--" -- battery specific options
                                        -- discharging status
@@ -37,5 +37,5 @@ Config { font = "xft:Sans:pixelsize=16:antialias=true:hinting=true"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " <icon=haskell_20.xpm/> <fc=#666666>|</fc> %UnsafeStdinReader% }{ <fc=#FFB86C>%cpu%</fc> <fc=#FF5555>%memory%</fc> <fc=#82AAFF>%disku%</fc> <fc=#c3e88d>%enp8s0%</fc> <icon=calendar-clock-icon_20.xpm/> <fc=#8BE9FD>%date%</fc> "
+       , template = " <icon=haskell_20.xpm/> <fc=#666666>|</fc> %UnsafeStdinReader% }{ <fc=#FFB86C>%cpu%</fc> <fc=#FF5555>%memory%</fc> <fc=#82AAFF>%disku%</fc> <fc=#FFB86C>%battery%</fc> <fc=#c3e88d>%wlan0%</fc> <icon=calendar-clock-icon_20.xpm/> <fc=#8BE9FD>%date%</fc> "
        }
